@@ -35,25 +35,21 @@ public class SearchController extends HttpServlet {
 		
 		String query = request.getParameter("searchQuery");
 		RequestDispatcher rd = null;
-		
+		EdamamSearch resultados =null;
 
 		log.log(Level.FINE, "Searching for Edamam recipes that contain " + query);
-		
-		EdamamResource edamam = new EdamamResource();
-		EdamamSearch resultados = edamam.getRecipes(query);
-		
 		
 
 		if (query != null) {
 			log.log(Level.FINE, "Searching for Edamam recipes that contain " + query);
-		
+			 EdamamResource edamam = new EdamamResource();
+			 resultados = edamam.getRecipes(query);
 			if (resultados.getHits().size() == 0) {
 				request.setAttribute("message", "No existen recetas que coincidan con sus parámetros de búsqueda");
 				rd = request.getRequestDispatcher("/index.jsp");
 			} else {
 				request.setAttribute("query", query);
 				request.setAttribute("recipes", resultados.getHits());
-
 				rd = request.getRequestDispatcher("/success.jsp");
 			}
 

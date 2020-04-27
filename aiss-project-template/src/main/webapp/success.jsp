@@ -16,15 +16,11 @@
 				<img src="<c:out value="${recipes.recipe.image}"/>"><br />
 				
 				<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
-					<input id="name" name="label" type="hidden"value="${recipes.recipe.label}" /> 
-					<input id="image" name="image" type="hidden"value="${recipes.recipe.image}" /> 
-					<input id="ingredients" name="ingredients" type="hidden"value="${recipes.recipe.ingredients}" /> 
-					<input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
+					<input id="label" name="label" type="hidden"value="${recipes.recipe.label}" />  
+				   <input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
 					
 				</form>
-			
-
-
+				
 			</div>
 			<div class="dcha">
 				<h2>
