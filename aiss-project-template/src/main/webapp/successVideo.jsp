@@ -1,29 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Search results</title>
+<meta charset="ISO-8859-1">
+<title>Tutorial de la receta</title>
+<link href="css/VideoStyle.css" rel="stylesheet">
 </head>
+
 <body>
-
-
-<fieldset id="youtube">
-<legend>YouTube search for <c:out value="${param.label}"/></legend>
-<c:choose>
-<c:when test="${not empty param.label}">
-<c:forEach items="${requestScope.videos}" var="item">
-<iframe src="https://www.youtube.com/embed/<c:out value="${item.id.videoId}"/>"></iframe>
-</c:forEach>
-</c:when>
-<c:otherwise>
-<span>No hay resultados.</span>
-</c:otherwise>
-</c:choose>
-</fieldset>
-
+	<c:choose>
+		<c:when test="${not empty param.label}">
+			<c:forEach items="${requestScope.videos}" var="item">
+				<iframe id="video" width="880" height="495" src="https://www.youtube.com/embed/<c:out value="${item.id.videoId}"/>" frameborder="0" allowfullscreen></iframe>
+			</c:forEach>
+		</c:when>
+		<c:otherwise>
+			<span>No hay resultados.</span>
+		</c:otherwise>
+	</c:choose>
 </body>
+
 </html>

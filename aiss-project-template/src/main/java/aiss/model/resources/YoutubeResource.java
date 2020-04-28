@@ -21,7 +21,7 @@ public class YoutubeResource {
 		
 		String query = URLEncoder.encode(param, "UTF-8");
 		String uri = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" +
-					query + "+music&key=" + YOUTUBE_API_KEY;
+					query + "+music&key=" + YOUTUBE_API_KEY + "&maxResults=1";
 		ClientResource cr = null;
 		VideoSearch youtubeSearch = null;
 		
