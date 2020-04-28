@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+body{
+	background-color: #fcd181;
+}
+
+iframe{
+	margin-top: 60px;
+	margin-left: 30px;
+}
