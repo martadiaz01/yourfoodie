@@ -36,8 +36,8 @@ public class SearchVideoController extends HttpServlet {
 		VideoSearch youtubeResults = youtube.getVideos(query);
 		
 		if (youtubeResults!=null) {
-			rd = request.getRequestDispatcher("/successVideo.jsp");
 			request.setAttribute("videos", youtubeResults.getItems());
+			rd = request.getRequestDispatcher("/successVideo.jsp");
 		} else {
 			log.log(Level.SEVERE, "YouTube object: " + youtubeResults);
 			rd = request.getRequestDispatcher("/error.jsp");

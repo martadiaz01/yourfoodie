@@ -20,6 +20,9 @@
 			<span>No hay resultados.</span>
 		</c:otherwise>
 	</c:choose>
+	<c:forEach items="${param.ingredients}" var="ingredient">
+	<p><c:out value="${param.ingredient.text}"></c:out></p>
+	</c:forEach>
 </body>
 
 </html>
