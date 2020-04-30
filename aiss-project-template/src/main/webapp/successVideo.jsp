@@ -15,14 +15,27 @@
 			<c:forEach items="${requestScope.videos}" var="item">
 				<iframe id="video" width="880" height="495" src="https://www.youtube.com/embed/<c:out value="${item.id.videoId}"/>" frameborder="0" allowfullscreen></iframe>
 			</c:forEach>
+			<c:forEach items="${requestScope.recipes}" var="recipes">
+				<div class="receta">
+					<h2>
+						<c:out value="${recipes.recipe.label}" />
+					</h2>
+					<p>Ingredientes:</p>
+					<div class="ingredientes">
+						<c:forEach items="${recipes.recipe.ingredients}" var="ingredient">
+							<p>
+								<c:out value="${ingredient.text}" />
+							</p>
+						</c:forEach>
+					</div>
+				</div>
+			</c:forEach>
 		</c:when>
 		<c:otherwise>
 			<span>No hay resultados.</span>
 		</c:otherwise>
 	</c:choose>
-	<c:forEach items="${param.ingredients}" var="ingredient">
-	<p><c:out value="${param.ingredient.text}"></c:out></p>
-	</c:forEach>
+	
 </body>
 
 </html>

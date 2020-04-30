@@ -41,4 +41,4 @@
 	</c:forEach>
 
 </body>
-</html>>
+</html>
