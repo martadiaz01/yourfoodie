@@ -16,9 +16,10 @@
 				<img src="<c:out value="${recipes.recipe.image}"/>"><br />
 				
 				<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
-					<input id="label" name="label" type="hidden"value="${recipes.recipe.label}" />  
+					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
 					<input id="ingredients" name="ingredients" type="hidden" value="${recipes.recipe.ingredients}">
-				   <input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
+					<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" />  
+				   	<input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
 				   
 					
 				</form>
