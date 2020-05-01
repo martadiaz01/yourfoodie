@@ -27,4 +27,13 @@ public class EdamamResource {
 
 		return recipes;
 	}
+	
+	public EdamamSearch getRecipe(String r, String uri) throws UnsupportedEncodingException {
+		
+		String peticion = r.concat(uri);
+		log.log(Level.FINE, "uri:" + peticion);
+		ClientResource cr= new ClientResource(peticion);
+		EdamamSearch recipe= cr.get(EdamamSearch.class);
+		return recipe;
+	}
 }

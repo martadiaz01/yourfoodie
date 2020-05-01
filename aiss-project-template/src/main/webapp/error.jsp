@@ -7,6 +7,6 @@
 <title>Error page</title>
 </head>
 <body>
-<h3>Search failed, please <a href="index.html">try again </a>.</h3>
+<h3>Búsqueda sin resultados, inténtelo de nuevo <a href="index.html">aquí</a>.</h3>
 </body>
 </html>

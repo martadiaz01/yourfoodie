@@ -34,11 +34,28 @@ public class SearchController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String query = request.getParameter("searchQuery");
+		String uriEscogida = request.getParameter("uri");
+		String rEscogida = request.getParameter("r");
 		RequestDispatcher rd = null;
 		EdamamSearch resultados =null;
-
-		log.log(Level.FINE, "Searching for Edamam recipes that contain " + query);
+		String peticion=null;
 		
+		
+		
+		 if(uriEscogida!= null && rEscogida!=null ) {
+			 EdamamResource edamam = new EdamamResource();
+			 resultados = edamam.getRecipe(rEscogida,uriEscogida);
+			 log.log(Level.FINE, "Searching for Edamam recipes that contain " + peticion);
+			 	if(resultados.getHits().size() ==1) {
+			 		 rd = request.getRequestDispatcher("/ShowRecipe.jsp");
+			 }else {
+				 log.log(Level.SEVERE, "Edamam 404 object: " + resultados);
+					rd = request.getRequestDispatcher("/error.jsp");
+			 }
+		 }else {
+			 log.log(Level.SEVERE, "Edamam 404 object: " + resultados);
+				rd = request.getRequestDispatcher("/error.jsp");
+		 }
 
 		if (query != null) {
 			log.log(Level.FINE, "Searching for Edamam recipes that contain " + query);
@@ -46,7 +63,7 @@ public class SearchController extends HttpServlet {
 			 resultados = edamam.getRecipes(query);
 			if (resultados.getHits().size() == 0) {
 				request.setAttribute("message", "No existen recetas que coincidan con sus parámetros de búsqueda");
-				rd = request.getRequestDispatcher("/index.jsp");
+				rd = request.getRequestDispatcher("/error.jsp");
 			} else {
 				request.setAttribute("query", query);
 				request.setAttribute("recipes", resultados.getHits());
@@ -55,8 +72,7 @@ public class SearchController extends HttpServlet {
 
 		} else {
 			
-			log.log(Level.SEVERE, "Edamam object: " + resultados);
-
+			log.log(Level.SEVERE, "Edamam 404 object: " + resultados);
 			rd = request.getRequestDispatcher("/error.jsp");
 		}
 

@@ -15,12 +15,17 @@
 			<div class="izq">
 				<img src="<c:out value="${recipes.recipe.image}"/>"><br />
 				
-				<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
+			<!-- 	<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
 					<input id="label" name="label" type="hidden"value="${recipes.recipe.label}" />  
-				   <input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
+				   <input type="submit"class="btn btn-default" name="buscarVideo" value="Video">
 					
-				</form>
+				</form>  -->
 				
+				<form id="videoYoutube" action="/SearchController" method="post" accept-charset="UTF-8" >
+					<input name="r" type="hidden"value="${recipes.recipe.r}" />  
+					<input  name="uri" type="hidden"value="${recipes.recipe.uri}" /> 
+				    <input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial" />
+				</form>
 			</div>
 			<div class="dcha">
 				<h2>
