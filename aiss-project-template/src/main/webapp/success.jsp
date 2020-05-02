@@ -19,12 +19,27 @@
 					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
 					<input id="ingredients" name="ingredients" type="hidden" value="${recipes.recipe.ingredients}">
 					<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" />  
+					<p>Ver tutorial:</p>
 				   	<input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
 				   
 					
 				</form>
 				
+			<form id="searchMap" action="/SearchMapsController" method="post" accept-charset="UTF-8">
+				<div id="divlocation">
+				<p>Introduzca su localización:</p>
+					<input id="location" type="text" class="form-control" name="location" placeholder="Dirección" required />
+					<input id="query" name="query" type="hidden" value="${requestScope.query}" />
+				</div>
+				<div id="divsuper">
+					<input type="submit" class="btn btn-default" id="location" name="location" value="Buscar restaurantes">
+				</div>
+					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
+			</form>
+				
 			</div>
+		
+
 			<div class="dcha">
 				<h2>
 					<c:out value="${recipes.recipe.label}" />
