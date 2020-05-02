@@ -38,6 +38,7 @@ public class SearchVideoController extends HttpServlet {
 		String query = request.getParameter("label");
 		String recipe = request.getParameter("recipe");
 		String uri = request.getParameter("uri");
+		String queryDrive = request.getParameter("query");
 		EdamamResource edamam = new EdamamResource();
 		EdamamSearch resultados = edamam.getRecipes(query);
 		RequestDispatcher rd = null;
@@ -64,6 +65,7 @@ public class SearchVideoController extends HttpServlet {
 			request.setAttribute("recipe", recipe);
 			request.setAttribute("uri", uri);
 			request.setAttribute("recetaIngredientes", map);
+			request.setAttribute("query", queryDrive);
 			rd = request.getRequestDispatcher("/successVideo.jsp");
 		} else {
 			log.log(Level.SEVERE, "YouTube object: " + youtubeResults);

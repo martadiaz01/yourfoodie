@@ -42,4 +42,54 @@
 		<servlet-name>SearchVideoController</servlet-name>
 		<url-pattern>/SearchVideoController</url-pattern>
 	</servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>GoogleDriveAuthController</servlet-name>
+    <servlet-class>aiss.controller.oauth.GenericAuthController</servlet-class>
+    <init-param>
+      <param-name>provider</param-name>
+      <param-value>GoogleDrive</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleDriveAuthController</servlet-name>
+    <url-pattern>/AuthController/GoogleDrive</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>GoogleDriveOAuth2Callback</servlet-name>
+    <servlet-class>aiss.controller.oauth.OAuth2Callback</servlet-class>
+    <init-param>
+      <param-name>provider</param-name>
+      <param-value>GoogleDrive</param-value>
+    </init-param>
+    <init-param>
+      <param-name>onSuccess</param-name>
+      <param-value>redirect:/googleDriveFileNew.jsp</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleDriveOAuth2Callback</servlet-name>
+    <url-pattern>/oauth2callback/GoogleDrive</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GoogleDriveFileNewController</display-name>
+    <servlet-name>GoogleDriveFileNewController</servlet-name>
+    <servlet-class>aiss.controller.GoogleDriveFileNewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleDriveFileNewController</servlet-name>
+    <url-pattern>/googleDriveFileNewController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewRecipeController</display-name>
+    <servlet-name>NewRecipeController</servlet-name>
+    <servlet-class>aiss.controller.NewRecipeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewRecipeController</servlet-name>
+    <url-pattern>/newRecipeController</url-pattern>
+  </servlet-mapping>
 </web-app>

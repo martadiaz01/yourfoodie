@@ -16,14 +16,17 @@
 				<img src="<c:out value="${recipes.recipe.image}"/>"><br />
 				
 				<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
+					<input id="recipe" name= "recipe" type= "hidden" value="${recipes}"/>
 					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
 					<input id="ingredients" name="ingredients" type="hidden" value="${recipes.recipe.ingredients}">
-					<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" />  
+					<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" /> 
+					<input id="query" name="query" type="hidden" value="${requestScope.query}" />
 					<p>Ver tutorial:</p>
 				   	<input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
 				   
 					
 				</form>
+				
 				
 			<form id="searchMap" action="/SearchMapsController" method="post" accept-charset="UTF-8">
 				<div id="divlocation">
