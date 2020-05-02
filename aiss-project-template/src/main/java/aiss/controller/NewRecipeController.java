@@ -35,10 +35,11 @@ public class NewRecipeController extends HttpServlet {
 		
 		String query = request.getParameter("searchQuery");
 		String uriReceta = request.getParameter("uriRecipe");
+		
 		EdamamResource receta = new EdamamResource();
 		EdamamSearch resultados = receta.getRecipes(query);
-		
 		List<Recipe> lista = new ArrayList<>();
+		
 		for(Hit hit: resultados.getHits()) {
 			lista.add(hit.getRecipe());
 		}

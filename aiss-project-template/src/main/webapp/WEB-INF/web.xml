@@ -65,7 +65,7 @@
     </init-param>
     <init-param>
       <param-name>onSuccess</param-name>
-      <param-value>redirect:/googleDriveFileNew.jsp</param-value>
+      <param-value>redirect:/GoogleDriveFileNew.jsp</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
@@ -80,7 +80,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>GoogleDriveFileNewController</servlet-name>
-    <url-pattern>/googleDriveFileNewController</url-pattern>
+    <url-pattern>/GoogleDriveFileNewController</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -90,6 +90,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>NewRecipeController</servlet-name>
-    <url-pattern>/newRecipeController</url-pattern>
+    <url-pattern>/NewRecipeController</url-pattern>
   </servlet-mapping>
 </web-app>

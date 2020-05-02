@@ -14,34 +14,53 @@
 		<div class="receta">
 			<div class="izq">
 				<img src="<c:out value="${recipes.recipe.image}"/>"><br />
-				
-				<form id="videoYoutube" action="/SearchVideoController" method="post" accept-charset="UTF-8">
-					<input id="recipe" name= "recipe" type= "hidden" value="${recipes}"/>
-					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
-					<input id="ingredients" name="ingredients" type="hidden" value="${recipes.recipe.ingredients}">
-					<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" /> 
-					<input id="query" name="query" type="hidden" value="${requestScope.query}" />
+
+				<form id="videoYoutube" action="/SearchVideoController"
+					method="post" accept-charset="UTF-8">
+					<input id="recipe" name="recipe" type="hidden" value="${recipes}" />
+					<input id="label" name="label" type="hidden"
+						value="${recipes.recipe.label}" /> <input id="ingredients"
+						name="ingredients" type="hidden"
+						value="${recipes.recipe.ingredients}"> <input
+						id="uriRecipe" name="uriRecipe" type="hidden"
+						value="${recipes.recipe.uri}" /> <input id="query" name="query"
+						type="hidden" value="${requestScope.query}" />
 					<p>Ver tutorial:</p>
-				   	<input type="submit"class="btn btn-default" name="buscarVideo" value="Tutorial">
-				   
+					<input type="submit" class="btn btn-default" name="buscarVideo"
+						value="Tutorial">
+
+
+				</form>
+
+
+				<form id="searchMap" action="/SearchMapsController" method="post"
+					accept-charset="UTF-8">
+					<div id="divlocation">
+						<p>Introduzca su localización:</p>
+						<input id="location" type="text" class="form-control"
+							name="location" placeholder="Dirección" required /> <input
+							id="query" name="query" type="hidden"
+							value="${requestScope.query}" />
+					</div>
+					<div id="divsuper">
+						<input type="submit" class="btn btn-default" id="location"
+							name="location" value="Buscar restaurantes">
+					</div>
+					<input id="label" name="label" type="hidden"
+						value="${recipes.recipe.label}" />
+				</form>
+
+				<form id="guardarDrive" action="/NewRecipeController" method="post"
+					accept-charset="UTF-8">
+					<input id="searchQuery" name="searchQuery" type="hidden" value="${requestScope.query}" /> 
+						<input id="name" name="name" type="hidden" value="${recipes.recipe.label}" /> 
+						<input id="recipe" name="recipe" type="hidden" value="${recipes}" /> 
+						<input id="uriRecipe" name="uriRecipe" type="hidden" value="${recipes.recipe.uri}" /> 
+						<input type="submit" class="btn btn-default" id="nuevaReceta" name="nuevaReceta" value="Añadir receta a Google Drive">
 					
 				</form>
-				
-				
-			<form id="searchMap" action="/SearchMapsController" method="post" accept-charset="UTF-8">
-				<div id="divlocation">
-				<p>Introduzca su localización:</p>
-					<input id="location" type="text" class="form-control" name="location" placeholder="Dirección" required />
-					<input id="query" name="query" type="hidden" value="${requestScope.query}" />
-				</div>
-				<div id="divsuper">
-					<input type="submit" class="btn btn-default" id="location" name="location" value="Buscar restaurantes">
-				</div>
-					<input id="label" name="label" type="hidden" value="${recipes.recipe.label}" />  
-			</form>
-				
 			</div>
-		
+
 
 			<div class="dcha">
 				<h2>

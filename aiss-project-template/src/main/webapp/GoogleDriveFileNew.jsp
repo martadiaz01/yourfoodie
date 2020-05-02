@@ -13,9 +13,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/newRecipe.css">
+
 <meta name="viewport" content="initial-scale=1.0">
 <meta charset="utf-8">
 <title>Nueva Receta</title>
@@ -26,7 +24,7 @@
 			Nueva Receta
 			<c:out value="${name}" />
 		</div>
-		<div id="cuerpoPanel" class="panel-body">
+		
 			<div class="container">
 				<form action="/index.html" method="post"class="inicio" accept-charset="UTF-8">
 					<input type="submit" class="btn btn-default" id="inicio" name="inicio" value="Inicio">
@@ -37,7 +35,7 @@
 				</form>
 				<p class="bg-primary">${message}</p>
 
-				<form action="/googleDriveFileNewController" method="post"
+				<form action="/GoogleDriveFileNewController" method="post"
 					accept-charset="UTF-8">
 					<input id="recipe" name="recipe" type="hidden" value="${requestScope.recipe}" />
 					<c:if test="${not empty file}">
@@ -58,7 +56,7 @@
 						<%}; %>
 						</textarea>
 					</div>
-					<div class="bottom_links">
+					<div>
 						<input type="submit" class="btn btn-default" id="anyadir" name="anyadir" value="Añadir">
 					</div>
 				</form>
@@ -67,7 +65,6 @@
 					<input type="hidden" id="searchQuery" name="searchQuery" value ="<%= session.getAttribute("recipe") %>">
 				</form>
 			</div>
-		</div>
 	</div>
 
 </body>

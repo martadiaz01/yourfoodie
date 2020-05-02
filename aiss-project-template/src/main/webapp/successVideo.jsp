@@ -41,13 +41,6 @@
 		</c:otherwise>
 	</c:choose>
 	
-<form id="guardarDrive" action="/NewRecipeController" method="post" accept-charset="UTF-8">
-		<input id="label" name="label" type="hidden"value="${requestScope.name}" /> 
-		<input id= "recipes" name="recipes" type="hidden" value="${requestScope.recipe}">
-		<input id="uriRecipe" name="uriRecipe" type="hidden"value="${requestScope.uri}" /> 
-		<input id="searchQuery" name="searchQuery" type="hidden" value="${requestScope.query}" /> 
-		<input type="submit"class="btn btn-default" name="guardar" value="Guardar en google Drive">	
-	</form>
 </body>
 
 </html>
